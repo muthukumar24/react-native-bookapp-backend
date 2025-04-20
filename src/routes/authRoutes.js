@@ -6,7 +6,7 @@ import 'dotenv/config';
 const router = express.Router();
 
 const generateToken = (userId) => {
-    jwt.sign({userId}, process.env.JWT_SECRET, {expiresIn: '1hr'});
+    return jwt.sign({userId}, process.env.JWT_SECRET, {expiresIn: '1hr'});
 }
 
 router.post('/register', async (req, res) => {
